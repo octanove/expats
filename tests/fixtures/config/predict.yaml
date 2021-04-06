@@ -1,0 +1,7 @@
+
+artifact_path: log/unittest
+
+dataset:
+    type: line-by-line
+    params:
+        file_path: tests/fixtures/data/line_by_line.txt

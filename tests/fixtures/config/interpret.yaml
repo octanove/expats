@@ -1,0 +1,7 @@
+
+artifact_path: log/unittest
+
+dataset:
+    type: asap-aes
+    params:
+        path: tests/fixtures/data/asap_aes_training_set_rel3_exmaple.tsv

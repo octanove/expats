@@ -1,0 +1,2 @@
+I recommend copying the code and distributing it with your decoder. However, please send improvements upstream.
+They're pretty simple and are intended to be reimplemented in your build system.

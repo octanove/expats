@@ -1,0 +1,25 @@
+task: regression
+
+profiler:
+    type: DocFeatureMLRegressor
+    params:
+        features:
+            - type: NumberOfTokenFeature
+              params:
+            - type: AverageTokenLengthFeature
+              params:
+            - type: UnigramLikelihoodFeature
+              params:
+                # TODO: please set your local path (recommend abs path)
+                path: data/tatoeba/eng_sentences.tsv.cut3.tokenize.unigram.tsv
+        classifier:
+            type: rf
+            params:
+                n_estimators: 100
+                max_depth: 5
+                random_state: 46
+
+dataset:
+    type: asap-aes
+    params:
+        path: data/asap-aes/training_set_rel3.tsv.random11680

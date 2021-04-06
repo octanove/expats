@@ -1,0 +1,25 @@
+
+task: classification
+
+profiler:
+    type: DocFeatureMLClassifier
+    params:
+        features:
+            - type: NumberOfTokenFeature
+              params:
+            - type: AverageTokenLengthFeature
+              params:
+            - type: UnigramLikelihoodFeature
+              params:
+                path: tests/fixtures/data/word2freq.tsv
+        classifier:
+            type: rf
+            params:
+                n_estimators: 3
+                max_depth: 2
+                random_state: 46
+
+dataset:
+    type: asap-aes
+    params:
+        path: tests/fixtures/data/asap_aes_training_set_rel3_exmaple.tsv

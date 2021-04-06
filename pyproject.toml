@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "expats"
+version = "0.1.0"
+description = "EXPlainable Automated Text Scorer"
+authors = ["mana-ysh <int.toshi13@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+scikit-learn = "^0.23.2"
+spacy = "^2.3.2"
+pandas = "^1.1.0"
+en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.0/en_core_web_sm-2.3.0.tar.gz" }
+torch = "^1.6.0"
+pydantic = "^1.6.1"
+transformers = "==4.3.2"
+datasets = "^1.1.2"
+pytorch-lightning = "^1.0.6"
+omegaconf = "^2.0.5"
+lit-nlp = "^0.2"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+pytest = "^6.0.1"
+flake8 = "^3.8.3"
+pytest-cov = "^2.10.0"
+mypy = "^0.790"
+
+[tool.poetry.scripts]
+expats = 'expats.cli:main'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

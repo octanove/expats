@@ -1,0 +1,21 @@
+
+task: classification
+
+profiler:
+    type: TransformerClassifier
+    params:
+      trainer:
+        gpus: null
+        max_epochs: 1
+      network:
+        num_class: 10
+        pretrained_model_name_or_path: bert-base-uncased
+        lr: 5e-4
+      data_loader:
+        batch_size: 16
+      val_ratio: 0.2
+
+dataset:
+    type: cefr-tsv
+    params:
+        file_path: tests/fixtures/data/cefr.tsv

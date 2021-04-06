@@ -1,0 +1,20 @@
+
+task: classification
+
+profiler:
+    type: TransformerClassifier
+    params:
+      trainer:
+        gpus: null
+        max_epochs: 1
+      network:
+        num_class: 10
+        pretrained_model_name_or_path: bert-base-uncased
+        lr: 5e-5
+      data_loader:
+        batch_size: 16
+
+dataset:
+    type: asap-aes
+    params:
+        path: data/asap-aes/training_set_rel3.tsv

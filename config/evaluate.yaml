@@ -1,0 +1,28 @@
+
+# Please set your artifact path specified when training
+artifact_path: log/train_yyyymmdd
+
+dataset:
+    type: asap-aes
+    params:
+        # NOTE: do evaluation with "training" data
+        path: data/asap-aes/training_set_rel3.tsv
+
+output_convert:
+    classification_to_regression:
+        type: ToFloat
+        params:
+
+metrics:
+    classification:
+        - type: MacroF1
+          params:
+        - type: MicroF1
+          params:
+        - type: Accuracy
+          params:
+        - type: QuadraticWeightedKappa
+          params:
+    regression:
+        - type: PearsonCorrelation
+          params:

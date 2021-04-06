@@ -1,0 +1,8 @@
+
+# Please set your artifact path specified when training
+artifact_path: log/train_yyyymmdd
+
+dataset:
+    type: line-by-line
+    params:
+        file_path: data/example/annotate_input.txt

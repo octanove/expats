@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 150
+# mccabe
+max-complexity = 10
+ignore =
+    # E203  # whitespace before :

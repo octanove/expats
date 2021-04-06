@@ -1,0 +1,21 @@
+task: regression
+
+profiler:
+    type: TransformerRegressor
+    params:
+      trainer:
+        gpus: 1
+        max_epochs: 80
+      network:
+        output_normalized: true
+        pretrained_model_name_or_path: distilbert-base-uncased
+        lr: 4e-5
+      data_loader:
+        batch_size: 16
+      val_ratio: 0.2
+      max_length: null
+
+dataset:
+    type: asap-aes
+    params:
+        path: data/asap-aes/training_set_rel3.tsv.random11680

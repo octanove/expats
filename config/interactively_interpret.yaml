@@ -1,0 +1,8 @@
+
+# Please set your artifact path specified when training
+artifact_path: log/train_yyyymmdd
+
+dataset:
+    type: asap-aes
+    params:
+        path: data/asap-aes/training_set_rel3.tsv
