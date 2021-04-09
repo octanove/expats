@@ -22,4 +22,4 @@ profiler:
 dataset:
     type: asap-aes
     params:
-        path: data/asap-aes/training_set_rel3.tsv.random11680
+        path: data/asap-aes/training_set_rel3.tsv

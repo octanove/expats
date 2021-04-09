@@ -5,7 +5,7 @@ artifact_path: <fill>
 dataset:
     type: asap-aes
     params:
-        path: /home/manabe_h/workspace/octanove/profiler/data/asap-aes/training_set_rel3.tsv.random11680_rest
+        path: data/asap-aes/training_set_rel3.tsv
         prompt_id: <fill>
 
 output_convert:
