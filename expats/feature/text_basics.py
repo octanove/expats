@@ -15,6 +15,12 @@ class NumberOfTokenFeature(Feature[spacy.tokens.doc.Doc]):
 
 
 @Feature.register
+class NumberOfTokenPerSentFeature(Feature[spacy.tokens.doc.Doc]):
+    def extract(self, _input):
+        return np.array([len(_input) / len(list(_input.sents))])
+
+
+@Feature.register
 class AverageTokenLengthFeature(Feature[spacy.tokens.doc.Doc]):
     def extract(self, _input):
         n_token = len(_input)
