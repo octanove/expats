@@ -22,6 +22,8 @@ def test_classification_metric(name, inputs, expected):
     "name, inputs, expected",
     [
         ("PearsonCorrelation", [(1, 10), (2, 9), (3, 2.5), (4, 6), (5, 4)], -0.74261065),
+        ("SpearmanCorrelation", [(1, 0), (2, 1), (3, 2), (4, 3), (5, 4)], 1.0),
+        ("SpearmanCorrelation", [(1, 5), (2, 6), (3, 7), (4, 8), (5, 7)], 0.820782681),
     ]
 )
 def test_regression_metric(name, inputs, expected):

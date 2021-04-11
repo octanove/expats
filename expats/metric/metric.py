@@ -5,7 +5,7 @@ from typing import Generic, List, Tuple, TypeVar
 from sklearn.preprocessing import LabelEncoder
 
 from expats.common.instantiate import ConfigFactoried
-from expats.metric.helper import f1, accuracy, cohen_kappa, pearsonr
+from expats.metric.helper import f1, accuracy, cohen_kappa, pearsonr, spearmanr
 
 T = TypeVar("T")
 U = TypeVar("U")
@@ -75,6 +75,12 @@ class RegressionMetric(ConfigFactoried, Metric[Tuple[float, float]]):
 class PearsonCorrelation(RegressionMetric):
     def _calculate(self, gold_ys: List[float], pred_ys: List[float]) -> float:
         return pearsonr(gold_ys, pred_ys)[0]
+
+
+@RegressionMetric.register
+class SpearmanCorrelation(RegressionMetric):
+    def _calculate(self, gold_ys: List[float], pred_ys: List[float]) -> float:
+        return spearmanr(gold_ys, pred_ys)[0]
 
 
 def _split(inputs: List[Tuple[U, U]]) -> Tuple[List[U], List[U]]:
