@@ -1,10 +1,6 @@
 
-from typing import List
-
 import numpy as np
-import spacy
 import pytest
-from unittest import mock
 
 from expats.feature.text_basics import (
     NumberOfTokenFeature,
