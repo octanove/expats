@@ -63,7 +63,7 @@ dataset:
 You can train the model by running the `expats train` command as shown below. 
 
 ```bash
-$ expats train config/asap_aes/train_bert.yaml artifacts
+$ poetry run expats train config/asap_aes/train_bert.yaml artifacts
 ```
 
 The result (e.g., log file, the model weights) is stored in the directory `artifacts`.
@@ -73,7 +73,7 @@ The result (e.g., log file, the model weights) is stored in the directory `artif
 You can evaluate your model by running:
 
 ```bash
-$ expats evaluate config/asap_aes/evaluate.yaml
+$ poetry run expats evaluate config/asap_aes/evaluate.yaml
 ```
 
 You can also configure the evaluation settings by modifying the configuration file.
@@ -82,5 +82,5 @@ You can also configure the evaluation settings by modifying the configuration fi
 
 You can launch the LIT server to interpret and visualize the trained model and its behavior:
 ```bash
-$ expats interpret config/asap_aes/interpret.yaml
+$ poetry run expats interpret config/asap_aes/interpret.yaml
 ```
