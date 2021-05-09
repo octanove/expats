@@ -1,6 +1,7 @@
 
 from typing import List, Optional
 
+from scipy.stats import spearmanr as scipy_spearmanr
 from scipy.stats import pearsonr as scipy_pearsonr
 from sklearn.metrics import accuracy_score, cohen_kappa_score, f1_score
 
@@ -19,3 +20,7 @@ def cohen_kappa(gold_ys: List[int], pred_ys: List[int], weights: Optional[str] =
 
 def pearsonr(gold_ys: List[float], pred_ys: List[float]) -> float:
     return scipy_pearsonr(gold_ys, pred_ys)
+
+
+def spearmanr(gold_ys: List[float], pred_ys: List[float]) -> float:
+    return scipy_spearmanr(gold_ys, pred_ys)
